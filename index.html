@@ -14,49 +14,48 @@
     <div id="authSection" class="auth-container">
         <h2>Accesso Rilevatori</h2>
         
-        <!-- Form di Login -->
-        <div id="loginForm">
-            <div class="form-group">
-                <label for="username">Username:</label>
-                <input type="text" id="username" placeholder="Inserisci username">
-            </div>
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" id="password" placeholder="Inserisci password">
-            </div>
-            <div class="action-buttons">
-                <button class="action-button save-button" onclick="login()">Accedi</button>
-            </div>
-            <p class="signup-text">Non hai un account? <a href="#" onclick="showRegistration(); return false;">Registrati</a></p>
-        </div>
+<div id="loginForm">
+    <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" placeholder="Inserisci username">
+    </div>
+    <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Inserisci password">
+    </div>
+    <div class="action-buttons">
+        <button class="action-button save-button" type="button" onclick="login();">Accedi</button>
+    </div>
+    <p class="signup-text">Non hai un account? <a href="#" onclick="showRegistration(); return false;">Registrati</a></p>
+</div>
 
-        <!-- Form di Registrazione -->
-        <div id="registrationForm" class="hidden">
-            <div class="form-group">
-                <label for="regUsername">Username:</label>
-                <input type="text" id="regUsername" placeholder="Scegli username">
-            </div>
-            <div class="form-group">
-                <label for="regPassword">Password:</label>
-                <input type="password" id="regPassword" placeholder="Scegli password">
-            </div>
-            <div class="form-group">
-                <label for="regEmail">Email:</label>
-                <input type="email" id="regEmail" placeholder="Inserisci email">
-            </div>
-            <div class="form-group">
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" placeholder="Inserisci nome">
-            </div>
-            <div class="form-group">
-                <label for="cognome">Cognome:</label>
-                <input type="text" id="cognome" placeholder="Inserisci cognome">
-            </div>
-            <div class="action-buttons">
-                <button class="action-button save-button" onclick="register()">Conferma Registrazione</button>
-                <button class="action-button" onclick="showLogin()">Torna al Login</button>
-            </div>
-        </div>
+<!-- Form di Registrazione -->
+<div id="registrationForm" class="hidden">
+    <div class="form-group">
+        <label for="regUsername">Username:</label>
+        <input type="text" id="regUsername" placeholder="Scegli username">
+    </div>
+    <div class="form-group">
+        <label for="regPassword">Password:</label>
+        <input type="password" id="regPassword" placeholder="Scegli password">
+    </div>
+    <div class="form-group">
+        <label for="regEmail">Email:</label>
+        <input type="email" id="regEmail" placeholder="Inserisci email">
+    </div>
+    <div class="form-group">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" placeholder="Inserisci nome">
+    </div>
+    <div class="form-group">
+        <label for="cognome">Cognome:</label>
+        <input type="text" id="cognome" placeholder="Inserisci cognome">
+    </div>
+    <div class="action-buttons">
+        <button class="action-button save-button" type="button" onclick="register();">Conferma Registrazione</button>
+        <button class="action-button" type="button" onclick="showLogin();">Torna al Login</button>
+    </div>
+</div>
 
         <div id="authMessage"></div>
     </div>
