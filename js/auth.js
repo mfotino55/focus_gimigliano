@@ -1,7 +1,11 @@
-Vedo il problema nel file auth.js. Manca la funzione `showRegistration`. Dobbiamo aggiungerla insieme ad alcune altre funzioni di supporto.
-
-Modifica il file `auth.js` aggiungendo queste funzioni all'inizio del file:
-
+window.showRegistration = function() {
+    document.getElementById('loginForm').classList.add('hidden');
+    document.getElementById('registrationForm').classList.remove('hidden');
+    clearAuthMessages();
+}
+window.login = function() {
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
 ```javascript
 // Funzioni UI per l'autenticazione
 function showRegistration() {
@@ -9,7 +13,10 @@ function showRegistration() {
     document.getElementById('registrationForm').classList.remove('hidden');
     clearAuthMessages();
 }
-
+window.register = function() {
+    const username = document.getElementById('regUsername').value;
+    const password = document.getElementById('regPassword').value;
+    }
 function showLogin() {
     document.getElementById('loginForm').classList.remove('hidden');
     document.getElementById('registrationForm').classList.add('hidden');
@@ -37,7 +44,6 @@ function clearAuthMessages() {
 }
 ```
 
-Puoi anche mostrarmi il contenuto del file `app.js`? Così possiamo verificare se manca anche la funzione `setupTabNavigation`.
 function login() {
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
