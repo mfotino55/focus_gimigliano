@@ -138,3 +138,29 @@ function switchAdminSection(button) {
     const sectionId = button.getAttribute('data-section') + 'Section';
     document.getElementById(sectionId).classList.add('active');
 }
+
+// Gestione della navigazione a tab
+function setupTabNavigation() {
+    console.log('Setting up tab navigation');
+    document.querySelectorAll('.tab-button').forEach(button => {
+        button.addEventListener('click', () => {
+            console.log('Tab clicked:', button.getAttribute('data-tab'));
+            // Rimuovi la classe active da tutti i pulsanti e pannelli
+            document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+
+            // Aggiungi la classe active al pulsante cliccato e al pannello corrispondente
+            button.classList.add('active');
+            const tabId = button.getAttribute('data-tab') + 'Tab';
+            const tabPane = document.getElementById(tabId);
+            if (tabPane) {
+                tabPane.classList.add('active');
+                // Se è il tab admin, aggiorna le sezioni admin
+                if (tabId === 'adminTab' && state.currentUser?.isAdmin) {
+                    updateRilevatoriList();
+                    updateReport();
+                }
+            }
+        });
+    });
+}
