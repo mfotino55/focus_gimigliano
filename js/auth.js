@@ -1,4 +1,43 @@
-// Sistema di autenticazione e autorizzazioni
+Vedo il problema nel file auth.js. Manca la funzione `showRegistration`. Dobbiamo aggiungerla insieme ad alcune altre funzioni di supporto.
+
+Modifica il file `auth.js` aggiungendo queste funzioni all'inizio del file:
+
+```javascript
+// Funzioni UI per l'autenticazione
+function showRegistration() {
+    document.getElementById('loginForm').classList.add('hidden');
+    document.getElementById('registrationForm').classList.remove('hidden');
+    clearAuthMessages();
+}
+
+function showLogin() {
+    document.getElementById('loginForm').classList.remove('hidden');
+    document.getElementById('registrationForm').classList.add('hidden');
+    clearAuthMessages();
+}
+
+function resetAuthForms() {
+    // Reset form login
+    document.getElementById('username').value = '';
+    document.getElementById('password').value = '';
+    // Reset form registrazione
+    document.getElementById('regUsername').value = '';
+    document.getElementById('regPassword').value = '';
+    document.getElementById('regEmail').value = '';
+    document.getElementById('nome').value = '';
+    document.getElementById('cognome').value = '';
+}
+
+function clearAuthMessages() {
+    const authMessage = document.getElementById('authMessage');
+    if (authMessage) {
+        authMessage.textContent = '';
+        authMessage.style.display = 'none';
+    }
+}
+```
+
+Puoi anche mostrarmi il contenuto del file `app.js`? Così possiamo verificare se manca anche la funzione `setupTabNavigation`.
 function login() {
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
